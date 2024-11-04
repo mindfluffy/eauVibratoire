@@ -1,0 +1,22 @@
+# Ignorer les dossiers système Windows
+/AppData/
+/Contacts/
+/Desktop/
+/Downloads/
+/Links/
+/Music/
+/Saved Games/
+/Videos/
+
+# Ignorer les fichiers utilisateur spécifiques (ntuser, etc.)
+ntuser.*
+
+# Ignorer VS Code et autres fichiers de configuration
+.vscode/
+node_modules/
+
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer des fichiers spécifiques
+*.ico
