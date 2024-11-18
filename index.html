@@ -1,102 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'eau Vibratoire</title>
-  <link rel="stylesheet" href="./assets/fonts/Inter-ExtraBold.ttf">
-  <link rel="stylesheet" href="./assets/fonts/Merriweather-Light.ttf">
- <link rel="stylesheet" href="./assets/styles/index.css">
-  <link rel="icon" href="assets/img/favicon.jpg" type="image/jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eau Vibratoire - Découvrez les bienfaits de l'eau magnétisée et les technologies innovantes Grander.">
+    <title>Eau Vibratoire</title>
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>L'eau Vibratoire</h1>
-      <p>Voulez vous découvrir les secrets cachés de l'eau</p>
-      <p>Blog scientifique sur l'eau et les sciences</p>
+    <header id="header">
+        <nav id="top-navigation">
+            <ul>
+                <li><a href="#eau-vibratoire">Eau Vibratoire</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#grander">Grander</a></li>
+                <li><a href="#contact" class="button-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
-      
-    </div>
     
-    <div class="nav">
-      <nav>
-        <ul>
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#articles">Articles</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    
-  </header>
 
-  <!-- Main Content -->
-  <main id="main">
-    <!-- Section d'accueil -->
-    <section class="home">
-     
-      <h2>Bienvenue sur L'eau Vibratoire</h2>
-      <p>Explorez des articles sur les sciences de l'eau et le bien-être.</p>
-    </section>
+    <main id="main">
+        <section id="hero-section">
+            <!-- Conteneur de la vidéo -->
+            <div class="video-container">
+                <video src="assets/videos/header-background.mp4" autoplay loop muted playsinline></video>
+                <div class="video-overlay"></div> <!-- Superposition transparente -->
+            </div>
+            
+            <!-- Contenu héro (titre, description, CTA) -->
+            <div class="hero-content">
+                <h1>Eau Vibratoire</h1>
+                <p>Découvrez les secrets de l'eau magnétisée et comment elle peut améliorer votre bien-être et équilibrer votre énergie.</p>
+                <a href="#articles" class="cta-button">Découvrir les Articles</a>
+            </div>
+        </section>
+        
+        <section id="articles" class="section-content section-light">
+            <h2>Articles Scientifiques</h2>
+            <p>Découvrez nos derniers articles sur les bienfaits de l'eau magnétisée et ses impacts sur la santé et le bien-être.</p>
+        
+            <div class="articles-row">
+                <article class="article-card">
+                    <img src="assets/img/article1.jpg" alt="Titre de l'article 1">
+                    <div class="article-content">
+                        <h3>Titre de l'Article 1</h3>
+                        <p>Un résumé rapide sur l'article 1 pour inciter à lire plus.</p>
+                        <a href="article1.html" class="read-more">Lire plus</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <img src="assets/img/article2.jpg" alt="Titre de l'article 2">
+                    <div class="article-content">
+                        <h3>Titre de l'Article 2</h3>
+                        <p>Un résumé rapide sur l'article 2 pour inciter à lire plus.</p>
+                        <a href="article2.html" class="read-more">Lire plus</a>
+                    </div>
+                </article>
+                <!-- Ajouter plus de cartes articles ici -->
+            </div>
+        </section>
+        
+        <section id="grander" class="section-content section-light">
+            <h2>Technologie Grander</h2>
+            <p>Découvrez la technologie Grander et ses applications innovantes pour améliorer la qualité de l'eau, aussi bien pour les particuliers que pour les professionnels.</p>
+        
+            <div class="grander-row">
+                <article class="grander-card">
+                    <img src="assets/img/particuliers.jpg" alt="Grander pour les particuliers">
+                    <div class="grander-content">
+                        <h3>Particuliers</h3>
+                        <p>Découvrez comment la technologie Grander peut améliorer la qualité de l'eau chez vous, pour une eau plus pure et énergisante.</p>
+                        <a href="particuliers.html" class="read-more">En savoir plus</a>
+                    </div>
+                </article>
+                <article class="grander-card">
+                    <img src="assets/img/professionnels.jpg" alt="Grander pour les professionnels">
+                    <div class="grander-content">
+                        <h3>Professionnels</h3>
+                        <p>Découvrez comment la technologie Grander peut bénéficier aux entreprises, artisans, et industries pour une eau de qualité optimale.</p>
+                        <a href="professionnels.html" class="read-more">En savoir plus</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+    </main>
 
-    <!-- Section des articles -->
-    <section class="articles">
-     
-      <h2>Articles1</h2>
-      <p>Découvrir nos articles1</p>
-      
-      <h2>Articles1</h2>
-      <p>Découvrir nos articles1</p>
-      <h2>Articles1</h2>
-      <p>Découvrir nos articles1</p>
+    <footer id="footer">
+        <p>&copy; 2024 Eau Vibratoire. Tous droits réservés.</p>
+    </footer>
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/animations.js" defer></script>
 
-
-    </section>
-
-   
-    <!-- Section Contact -->
-     <div class="down">
-
-       <section id="contact">
-         <h2>Contactez-nous</h2>
-         <p>Si vous avez des questions sur nos articles ou sur l'eau Grander, n'hésitez pas à nous contacter.</p>
-
-         <div class="container">
-
-           <img src="./assets/img/parapluie.jpg" alt="">
-           <form action="">
-             <input type="text" id="surname" placeholder="Nom">
-             <input type="text" id="firstname" placeholder="Prénom">
-             <input type="email" id="email" placeholder="Email">
-             <textarea cols="30"
-             rows="10" placeholder="Ici vos questions et message"></textarea>
-             <input type="submit" value="Envoyer" id="btn-submit">
-             
-            </form>
-          </div>
-          </section>
-      </div>
-        <!-- Section à propos -->
-         <div class="about">
-
-           <section>
-             <h2>À propos de L'eau Vibratoire:</h2>
-             <p>Notre mission est de sensibiliser et d'explorer les sciences de l'eau et du bien-être.</p>
-            </section>
-          </div>
-  </main>
-  
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 L'eau Vibratoire. Tous droits réservés.</p>
-    <div class="media">
-      <span id="fb">fb</span>
-      <span id="X">X</span>
-      <span id="insta">Insta</span>
-      <!-- Icônes réseaux sociaux (à ajouter) -->
-    </div>
-  </footer>
 </body>
 </html>
+
+
+

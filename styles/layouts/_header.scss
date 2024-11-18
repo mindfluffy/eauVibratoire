@@ -1,0 +1,73 @@
+@use '../variables' as v;
+@use './fonts' as f;
+
+#top-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(5, 5, 5, 0.8); // Fond sombre avec une légère transparence
+    z-index: 1000;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: v.$background-light; // Couleur claire pour contraster avec le fond
+        text-decoration: none;
+        font-family: v.$font-heading;
+        font-weight: bold;
+        transition: color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            color: lighten(v.$background-light, 15%);
+            transform: translateY(-3px); // Lien qui "remonte" légèrement au survol
+        }
+    }
+
+    .button-link {
+        border: 1px solid v.$background-light;
+        padding: 8px 15px;
+        border-radius: 30px;
+        transition: background 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background: v.$background-light;
+            color: v.$background-dark;
+        }
+    }
+
+    .button-cta {
+        background-color: v.$background-light;
+        color: v.$background-dark;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background-color: lighten(v.$background-light, 10%);
+            color: darken(v.$background-dark, 10%);
+        }
+    }
+}
+
+
+
+    
+
+
+
+
+
+

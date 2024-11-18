@@ -1,0 +1,79 @@
+@use '../variables' as v;
+@use './fonts' as f;
+
+#top-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; // Étend la navigation sur toute la largeur
+    display: flex;
+    justify-content: space-between; // Espacement maximal entre les éléments (logo à gauche, liens à droite)
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(5, 5, 5, 0.8); // Fond sombre avec légère transparence
+    z-index: 1000;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around; // Espacement égal entre tous les liens
+        flex: 1; // Assure que la liste occupe toute la largeur disponible
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin: 0 20px; // Espacement entre chaque élément de navigation
+    }
+
+    a {
+        color: v.$background-light; // Texte clair
+        text-decoration: none;
+        font-family: v.$font-heading;
+        font-weight: bold;
+        transition: color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            color: lighten(v.$background-light, 15%);
+            transform: translateY(-3px); // Soulève légèrement le lien au survol
+        }
+    }
+
+    .button-link {
+        border: 1px solid v.$background-light;
+        padding: 8px 15px;
+        border-radius: 30px;
+        transition: background 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background: v.$background-light;
+            color: v.$background-dark;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 10px 20px;
+
+        ul {
+            flex-direction: column;
+            gap: 10px; // Réduire l'espacement entre les liens
+        }
+
+        li {
+            margin: 0; // Pas d'espacement horizontal
+        }
+    }
+
+    @media (max-width: 480px) {
+        ul {
+            justify-content: center;
+            gap: 5px;
+        }
+
+        a {
+            font-size: 0.9rem; // Réduire la taille de la police pour qu'elle reste bien lisible sans occuper trop d'espace
+        }
+    }
+}
+
+

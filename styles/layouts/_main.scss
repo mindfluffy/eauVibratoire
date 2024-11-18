@@ -1,0 +1,329 @@
+@use '../variables' as v;
+@use './fonts' as f;
+
+html, body {
+    height: 100%;  // Assure que html et body prennent toute la hauteur de la fenêtre
+    margin: 0;
+    padding: 0;
+    background: rgb(0,0,5);
+    color: v.$background-light;  // Assure que le texte est bien lisible sur le fond
+    font-family: v.$font-body;
+    box-sizing: border-box;
+}
+
+#hero-section {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+
+    .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9) contrast(1.9) saturate(1.5);
+
+        }
+    
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.021);
+            z-index: 2;
+        }
+    }
+    
+    
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3; // Place le contenu devant la vidéo et l'overlay
+        text-align: center;
+        color: v.$background-light;
+        padding: 20px;
+
+        h1 {
+            font-family: v.$font-heading;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: v.$background-light;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-family: v.$font-body;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            background: rgba(255, 255, 255, 0.9);
+            color: v.$background-dark;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+                background: lighten(v.$background-light, 10%);
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-content {
+            padding: 10px;
+
+            h1 {
+                font-size: 2.5rem; // Réduire légèrement la taille du titre
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 10px 20px; // Réduire la taille du bouton pour économiser de l'espace
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content {
+            h1 {
+                font-size: 2rem; // Réduire encore la taille du titre pour les très petits écrans
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 8px 15px; // Adapter le bouton à l'espace disponible
+            }
+        }
+    }
+}
+
+#articles {
+    padding: 60px 20px;
+    text-align: center;
+
+    h2 {
+        font-family: v.$font-heading;
+        color: v.$background-light; // Texte clair pour bien ressortir sur le fond sombre
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: v.$font-body;
+        color: v.$background-light; // Texte clair pour maintenir le contraste
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+    }
+
+    .articles-row {
+        display: flex;
+        overflow-x: auto; // Permettre le défilement horizontal
+        gap: 20px; // Espacement entre les articles
+        padding-bottom: 20px;
+
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3); // Barre de défilement légèrement visible
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            gap: 15px; // Réduire l'espacement entre les cartes
+        }
+    
+        @media (max-width: 480px) {
+            .article-card {
+                min-width: 250px; // Réduire la largeur minimale pour les cartes sur petits écrans
+            }
+    
+            gap: 10px; // Espacement plus petit pour permettre de mieux défiler
+        }
+    }
+
+    .article-card {
+        min-width: 300px; // Largeur minimale de chaque carte
+        flex: 0 0 auto; // Empêche les cartes de se réduire
+        background: rgba(255, 255, 255, 0.1); // Couleur de fond avec transparence
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Légère ombre pour effet de profondeur
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        color: v.$background-light; // Assurer que tout le texte est dans la couleur claire
+
+        &:hover {
+            transform: translateY(-5px); // Soulever légèrement la carte au survol
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); // Ombre accentuée au survol
+        }
+
+        img {
+            width: 100%;
+            height: 180px; // Hauteur fixe pour l'image
+            object-fit: cover; // Assurer que l'image couvre bien tout l'espace sans déformation
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .article-content {
+            padding: 20px;
+
+            h3 {
+                font-family: v.$font-heading;
+                color: v.$background-light; // Couleur du titre claire pour le contraste
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-family: v.$font-body;
+                font-size: 1rem;
+                color: v.$background-light; // Texte dans la couleur claire
+                margin-bottom: 20px;
+            }
+
+            .read-more {
+                font-weight: bold;
+                color: v.$background-light; // Texte clair pour le lien
+                text-decoration: none;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: lighten(v.$background-light, 10%);
+                }
+            }
+        }
+    }
+}
+
+#grander {
+    padding: 60px 20px;
+    text-align: center;
+
+    h2 {
+        font-family: v.$font-heading;
+        color: v.$background-light; // Texte clair pour ressortir sur le fond sombre
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: v.$font-body;
+        color: v.$background-light; // Texte clair pour assurer le contraste
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+    }
+
+    .grander-row {
+        display: flex;
+        overflow-x: auto; // Permettre le défilement horizontal
+        gap: 20px; // Espacement entre les cartes
+        padding-bottom: 20px;
+
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3); // Barre de défilement subtilement visible
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            gap: 15px; // Réduire l'espacement entre les cartes
+        }
+    
+        @media (max-width: 480px) {
+             .grander-card {
+                min-width: 250px; // Réduire la largeur minimale pour les cartes sur petits écrans
+            }
+    
+            gap: 10px; // Espacement plus petit pour permettre de mieux défiler
+        }
+    }
+
+    .grander-card {
+        min-width: 300px; // Largeur minimale pour chaque carte
+        flex: 0 0 auto; // Empêcher les cartes de se réduire
+        background: rgba(255, 255, 255, 0.1); // Fond transparent pour laisser apparaître le fond sombre
+        border-radius: 15px; // Coins arrondis pour un effet visuel doux
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Légère ombre pour créer de la profondeur
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        color: v.$background-light; // Assurer que tout le texte soit bien clair pour le contraste
+
+        &:hover {
+            transform: translateY(-5px); // Légèrement levé au survol
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); // Ombre accentuée au survol
+        }
+
+        img {
+            width: 100%;
+            height: 180px; // Hauteur fixe pour l'image
+            object-fit: cover; // Assure que l'image couvre bien l'espace sans être déformée
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .grander-content {
+            padding: 20px;
+
+            h3 {
+                font-family: v.$font-heading;
+                color: v.$background-light; // Couleur du titre claire pour bien ressortir
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-family: v.$font-body;
+                font-size: 1rem;
+                color: v.$background-light; // Texte dans la couleur claire
+                margin-bottom: 20px;
+            }
+
+            .read-more {
+                font-weight: bold;
+                color: v.$background-light; // Lien en couleur claire
+                text-decoration: none;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: lighten(v.$background-light, 10%);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
