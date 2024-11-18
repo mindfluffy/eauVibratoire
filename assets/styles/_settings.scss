@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "montserratbold";
+    src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "montserralight";
+    src: url(../fonts/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: "loraBold";
+    src: url(../fonts/Lora-Bold.ttf);
+}
+
+@font-face {
+    font-family: "loraMedium";
+    src: url(../fonts/Lora-Medium.ttf);
+}
+
+@font-face {
+    font-family: "latoThin";
+    src: url(../fonts/Lato-Thin.ttf);
+}
+
+// * {
+//     margin: 0;
+//     padding: 0;
+// }
+
+body{
+    font-family: "montserratbold";
+    background: url(../img/bg1.jpg) center/cover;
+    min-height: 100vh;
+}
+

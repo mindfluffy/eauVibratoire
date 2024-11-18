@@ -1,0 +1,99 @@
+main {
+    color: beige;
+    min-height: 500px;
+    background: #82a2d196;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #5572B2;
+    border-radius: 20px;
+}
+
+.home {
+    border: 2px solid #344C92;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    background: #8a958669;
+    text-align: center;
+
+}
+
+.articles {
+    border: 2px solid #344C92;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    background: #344c9263;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 250px;
+    align-content: center;
+    // centrer un unique élément horizontalement et verticalement
+    align-items: center;
+
+}
+
+.down img{
+    height: 400px;
+    width: 100%;
+    
+}
+.down {
+    border: solid 2px #1c2751 ;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
+    .container {
+        display: grid;
+        border: solid 2px #1c2751;
+        border-radius: 0 0 20px 20px;
+        grid-template-columns: 30% 70%;
+        input, textarea {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #8a9586;
+            border-radius: 10px;
+            font-family: "montserralight";
+        }
+        form {
+            display: grid;
+            height: 50px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: 
+            "i1 i2 i3"
+            "ta ta ta"
+            "vi vi bt";
+       
+        }
+        textarea {
+            grid-area: ta;
+            resize: none;
+            height: 100px;
+        }
+        #btn-submit {
+            grid-area: bt;
+            cursor: pointer;
+            background: #1c2751;
+            color: #8a9586;
+            
+        }
+        #btn-submit:hover {
+            background: #8a9586;
+            color: #1c2751;
+        }
+    }
+       
+    
+}
+
+.about {
+    border: solid 2px #1c2751 ;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
+
+
+}
+
